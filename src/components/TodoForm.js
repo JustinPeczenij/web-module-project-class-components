@@ -21,9 +21,12 @@ class TodoForm extends React.Component {
         this.setState({input: ''})
     }
 
+    clear = () => {
+        this.props.clearCompleted();
+    }
+
     render() {
         return(
-            
             <div>
                 <form onSubmit={this.formSubmit}>
                     <input 
@@ -34,7 +37,7 @@ class TodoForm extends React.Component {
                     />
                     <button>Add Todo</button>
                 </form>
-                <button>Clear Completed</button>
+                <button onClick={this.clear}>Clear Completed</button>
             </div>
         );
     }
